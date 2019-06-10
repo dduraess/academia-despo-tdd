@@ -14,11 +14,11 @@ public class TestaPlacar {
 
     @Before
     public void inicia(){
-        placar = new Placar();
+        placar = new Placar(new ArmazenamentoMock("Guerra", TipoPonto.ESTRELA, 10));
     }
 
     @Test
-    public void testaContagemPontosTipoEstrela() {
-        assertEquals("O usuário Guerra recebeu 10 pontos do tipo estrela", placar.contarPontos("Guerra"));
+    public void testaPlacarPontosTipoEstrela() {
+        assertEquals("O usuário Guerra recebeu 10 pontos do tipo estrela", placar.exibirPlacar());
     }
 }

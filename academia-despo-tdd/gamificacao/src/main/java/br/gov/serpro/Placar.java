@@ -5,7 +5,13 @@ package br.gov.serpro;
  */
 public class Placar {
 
-    public String contarPontos(String usuario) {
+    private Armazenamento ar;
+
+    public Placar(Armazenamento ar){
+        this.ar = ar;
+    }
+
+    public String exibirPlacar() {
         return null;
     }
 }
