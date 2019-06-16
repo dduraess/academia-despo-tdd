@@ -45,7 +45,7 @@ Organização do código implementado
 Uso correto de Mock Objects
 Divisão correta de responsabilidades entre as classes
 
-###Formas de implementar o armazenamento em arquivo 
+### Formas de implementar o armazenamento em arquivo 
 É deixado livre a forma como os dados de pontuação do usuário serão armazenado em um arquivo, desde que os requisitos sejam cumpridos. É importante que outras classes não dependam de forma alguma de como é feita essa armazenagem no arquivo.
 
 Uma abordagem para armazenar os dados seria fazer isso de uma forma incremental. Sempre só adicionando dados no arquivo. Nesse caso, para saber a pontuação de um usuário, seria necessário percorrer todo o arquivo procurando por todos os dados a respeito dele.
