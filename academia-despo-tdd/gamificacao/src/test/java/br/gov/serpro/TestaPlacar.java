@@ -2,6 +2,10 @@ package br.gov.serpro;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 
@@ -11,14 +15,18 @@ import static org.junit.Assert.*;
 public class TestaPlacar {
 
     private Placar placar;
+    private ArmazenamentoMock ar;
 
     @Before
     public void inicia(){
-        placar = new Placar(new ArmazenamentoMock("Guerra", TipoPonto.ESTRELA, 10));
+        ar = new ArmazenamentoMock();
+        placar = new Placar(ar);
     }
 
     @Test
-    public void testaPlacarPontosTipoEstrela() {
-        assertEquals("O usuário Guerra recebeu 10 pontos do tipo estrela", placar.exibirPlacar());
+    public void testaPontosCompetidorTipoEstrela() {
+        ar.armazenarPontosCompetidor("Guerra", "estrela", 10);
+        assertEquals("{estrela=10}", placar.exibirPontosCompetidorPorTipo("Guerra", "estrela"));
+
     }
 }

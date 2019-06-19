@@ -1,11 +1,5 @@
 ## Tarefa avaliada por colega: Componente de Gamificação
 
-_Enviar até June 30, 11:59 PM PDT_
-
-**Informações importantes**
-
-É especialmente importante enviar essa tarefa antes do prazo, June 30, 11:59 PM PDT, pois ela deve receber uma nota dos colegas. Se você enviar depois dessa data, pode não haver colegas suficientes para avaliar seu trabalho. Isso dificulta (e, em alguns casos, impossibilita) a atribuição de notas. Envie no prazo para evitar esses riscos.
-
 ### Instruções
 
 Nesta tarefa será utilizado o TDD para desenvolver um componente de gamificação. Esse componente deve armazenar diferentes tipos de pontos que o usuário pode receber. Por exemplo, uma aplicação pode possuir pontos do tipo "moeda" e "estrela", enquanto outra pode possuir pontos do tipo "topico", "comentario" e "curtida". Esse componente deve possuir uma classe principal chamada Placar, onde deve ficar a lógica, e uma classe chamada Armazenamento, que deve ser responsável por guardar e recuperar as informações de um arquivo.
