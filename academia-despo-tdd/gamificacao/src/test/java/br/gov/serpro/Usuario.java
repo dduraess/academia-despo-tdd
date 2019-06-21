@@ -3,19 +3,19 @@ package br.gov.serpro;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Competidor implements Comparable<Competidor> {
+public class Usuario implements Comparable<Usuario> {
 
     private String nome;
     private Map<String, Integer> pontuacao;
 
-    public Competidor(String nome, String tipoPonto, Integer pontos){
+    public Usuario(String nome, String tipoPonto, Integer pontos){
         this.nome = nome;
         pontuacao = new HashMap<>();
         pontuacao.put(tipoPonto,pontos);
     }
 
     @Override
-    public int compareTo(Competidor o) {
+    public int compareTo(Usuario o) {
         return 0;
     }
 
@@ -23,7 +23,7 @@ public class Competidor implements Comparable<Competidor> {
         return nome;
     }
 
-    public Map<String, Integer> getPontuacao(String tipoPonto) {
+    public Map<String, Integer> getPontuacao() {
         return pontuacao;
     }
 }

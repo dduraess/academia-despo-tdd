@@ -7,14 +7,18 @@ import java.util.Map;
  */
 public class Placar {
 
-    private Armazenamento ar;
+    private Armazenamento armazena;
 
-    public Placar(Armazenamento ar){
-        this.ar = ar;
+    public Placar(Armazenamento armazena){
+        this.armazena = armazena;
     }
 
-    public String exibirPontosCompetidorPorTipo(String nome, String tipoPonto) {
-        Map<String, Integer> pontosCompetidorPorTipo = ar.recuperarPontosCompetidor(nome, tipoPonto);
-        return pontosCompetidorPorTipo.toString();
+    public void registrarPontosUsuarioPorTipo(String nome, String tipoPonto, Integer i) {
+        armazena.armazenarPontosCompetidor(nome, tipoPonto, i);
+    }
+
+    public String retornarPontuacaoGeralUsuario(String nome) {
+        Map<String, Integer> pontosCompetidor = armazena.recuperarPontosCompetidor(nome);
+        return pontosCompetidor.toString();
     }
 }

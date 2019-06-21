@@ -1,6 +1,7 @@
 package br.gov.serpro;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -9,21 +10,30 @@ import java.util.Map;
  */
 public class ArmazenamentoMock implements Armazenamento{
 
-    private List<Competidor> competidores;
+    private List<Usuario> usuarios;
 
-    @Override
-    public void armazenarPontosCompetidor(String nome, String tipoPonto, Integer i) {
-        competidores = new ArrayList<>();
-        competidores.add(new Competidor(nome, tipoPonto, i));
+    public ArmazenamentoMock (){
+        usuarios = new ArrayList<>();
     }
 
     @Override
-    public Map<String, Integer> recuperarPontosCompetidor(String nome, String tipoPonto) {
-        for (Competidor competidor:competidores) {
-            if (competidor.getNome() == nome && !competidor.getPontuacao(tipoPonto).isEmpty()) {
-                return competidor.getPontuacao(tipoPonto);
+    public void armazenarPontosCompetidor(String nome, String tipoPonto, Integer i) {
+        Usuario usuario = new Usuario(nome, tipoPonto, i);
+        usuarios.add(usuario);
+        gravarPontosArquivo(usuario);
+    }
+
+    private void gravarPontosArquivo(Usuario usuario) {
+
+    }
+
+    @Override
+    public Map<String, Integer> recuperarPontosCompetidor(String nome) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getNome() == nome) {
+                return usuario.getPontuacao();
             }
-        } throw new RuntimeException("Competidor não participou ou não tem esse tipo de ponto");
+        } throw new RuntimeException("Usuário não pontuou");
     }
 
 }
