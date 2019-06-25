@@ -13,12 +13,12 @@ public class Placar {
         this.armazena = armazena;
     }
 
-    public void registrarPontosUsuarioPorTipo(String nome, String tipoPonto, Integer i) {
+    public void registrarPontosUsuarioPorTipo(String nome, TipoPonto tipoPonto, Integer i) {
         armazena.armazenarPontosCompetidor(nome, tipoPonto, i);
     }
 
     public String retornarPontuacaoGeralUsuario(String nome) {
-        Map<String, Integer> pontosCompetidor = armazena.recuperarPontosCompetidor(nome);
+        Map<TipoPonto, Integer> pontosCompetidor = armazena.recuperarPontosCompetidor(nome);
         return pontosCompetidor.toString();
     }
 }

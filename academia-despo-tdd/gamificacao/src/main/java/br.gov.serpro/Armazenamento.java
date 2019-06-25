@@ -7,6 +7,6 @@ import java.util.Map;
  */
 public interface Armazenamento {
 
-    void armazenarPontosCompetidor(String nome, String tipoPonto, Integer i);
-    Map<String, Integer> recuperarPontosCompetidor(String nome);
+    void armazenarPontosCompetidor(String nome, TipoPonto tipoPonto, Integer i);
+    Map<TipoPonto, Integer> recuperarPontosCompetidor(String nome);
 }

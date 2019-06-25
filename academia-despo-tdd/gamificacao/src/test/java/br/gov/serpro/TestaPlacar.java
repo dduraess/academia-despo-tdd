@@ -1,15 +1,7 @@
 package br.gov.serpro;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -30,14 +22,18 @@ public class TestaPlacar {
 
     @Test
     public void testaPontosUsuarioApenasUmTipo() {
-        placar.registrarPontosUsuarioPorTipo("Guerra", "estrela", 10);
-        assertEquals("{estrela=10}", placar.retornarPontuacaoGeralUsuario("Guerra"));
+        placar.registrarPontosUsuarioPorTipo("Guerra", TipoPonto.ESTRELA, 10);
+        assertEquals("{ESTRELA=10}", placar.retornarPontuacaoGeralUsuario("Guerra"));
 
     }
 
     @Test
-    @Ignore
-    public void testaGravacao(){
-
+    public void testaGravacaoArquivoDepoisFinalizarPrimeiraAtribuicaoPontos() {
+        assertEquals("{ESTRELA=10}", placar.retornarPontuacaoGeralUsuario("Guerra"));
     }
+
+//    @Test
+//    public void testaGravacao() {
+//
+//    }
 }
